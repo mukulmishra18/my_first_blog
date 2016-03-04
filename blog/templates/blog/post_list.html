@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title>my_blog</title>
+</head>
+<body>
+	<div>
+		<h1><a href="/">My Blog Posts</a></h1>
+	</div>
 
-	<head>
-		<title>mukul's blog</title>
-	</head>
-
-	<body>
-
+	{% for post in posts%}
 		<div>
-			<h1><a href="">About</a></h1>
+			<p>published: {{ post.published_date }}</p>
+			<h1><a href="">{{ post.title }}</a></h1>
+			<p>{{ post.text|linebreaks }}</p>
 		</div>
-
-		<div>
-			<p>Born on 18/9/1995</p>
-			<h2><a href="">Just Do it.</a></h2>
-			<p>This is to be done by you.</p>
-		</div>
-
-		<div>
-			<h3><a href="">MAN</a></h3>
-			<p>Specifies manual of a document</p>
-		</div>
-
-	</body>
-
+	{% endfor %}
+</body>
 </html>
