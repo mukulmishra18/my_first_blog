@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>my_blog</title>
+	<title>Mukul Mishra</title>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -15,7 +15,10 @@
 <body>
 
 	<div class="page-header">
-		<h1><a href="/">My Blog Posts</a></h1>
+	{% if user.is_authenticated %}
+		<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	{% endif %}
+		<h1><a href="/">Data Structure and Algorithms</a></h1>
 	</div>
 
 	<div class="content container">
